@@ -2,8 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp.google)
-    alias(libs.plugins.dagger.hilt.android)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -11,7 +11,7 @@ android {
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.example.demotechapp"
+        applicationId = "com.roshan.sample"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1
@@ -27,8 +27,17 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
+
+    flavorDimensions += "environment"
+    productFlavors {
+        create("dev")
+        create("staging")
+        create("prod")
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_19
         targetCompatibility = JavaVersion.VERSION_19
@@ -42,6 +51,9 @@ android {
 }
 
 dependencies {
+    /**
+     ******************************* Android Common Component***************************************
+     **/
     implementation(libs.androidx.core.ktx)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
@@ -50,17 +62,36 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
+    /**
+     ******************************* Image Loading *************************************************
+     **/
     implementation(libs.coil.compose)
-    implementation(libs.androidx.hilt.navigation.compose)
 
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    implementation(libs.okhttp)
-    implementation(libs.logging.interceptor)
-    implementation(libs.code.gson)
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
+    /**
+     ******************************* ViewModel and LiveData ****************************************
+     **/
     implementation(libs.lifecycle.viewmodel.ktx)
+
+    /**
+     ******************************* DI ************************************************************
+     **/
+    implementation(libs.koin.android)
+    implementation(libs.koin.compose)
+    //implementation(libs.koin.viewmodel)
+
+    /**
+     ******************************* Network-KTOR **************************************************
+     **/
+    implementation(libs.ktor.core)
+    implementation(libs.ktor.android)
+    implementation(libs.ktor.serialization)
+    implementation(libs.ktor.content.negotiation)
+    implementation(libs.ktor.kotlinx.json)
+    implementation(libs.ktor.logging)
+
+    /**
+     ******************************* Unit Testing ************************************
+     **/
     androidTestImplementation(libs.androidx.junit)
 
 

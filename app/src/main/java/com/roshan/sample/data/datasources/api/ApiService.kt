@@ -1,15 +1,22 @@
 package com.roshan.sample.data.datasources.api
 
 import com.roshan.sample.domain.model.ProductListDTO
-import retrofit2.http.GET
-import retrofit2.http.Path
 
+/**
+ * @Details ApiService
+ * @Author Roshan Bhagat
+ * @constructor Create Api service
+ */
 interface ApiService {
-
-    @GET("/products")
+    /**
+     * Performs a GET call to obtain a getAllProductListAPI
+     */
     suspend fun getAllProductListAPI(): List<ProductListDTO>
 
-    @GET("/products/{Id}")
-    suspend fun getProductDetailsAPI(@Path("Id") id: String): ProductListDTO
-
+    /**
+     * Base on Movies Id fetch the details of movie
+     * @param id: String id of product based on˚ which product should be fetched
+     * @return
+     */
+    suspend fun getProductDetailsAPI(id: String): ProductListDTO
 }

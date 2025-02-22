@@ -6,10 +6,9 @@ import com.roshan.sample.domain.model.ProductItem
 import com.roshan.sample.domain.repository.Repository
 import com.roshan.sample.domain.toProductDetail
 import com.roshan.sample.domain.toProductList
-import javax.inject.Inject
 
 
-class RepositoryImpl @Inject constructor(private val apiService: ApiService) : Repository {
+class RepositoryImpl(private val apiService: ApiService) : Repository {
 
     override suspend fun getProductList(): List<ProductItem> {
         return apiService.getAllProductListAPI().map { it.toProductList() }

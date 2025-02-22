@@ -7,13 +7,10 @@ import androidx.lifecycle.viewModelScope
 import com.roshan.sample.core.UiState
 import com.roshan.sample.domain.usecase.GetProductDetailUseCase
 import com.roshan.sample.presentation.state.ProductDetailState
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import javax.inject.Inject
 
-@HiltViewModel
-class ProductDetailVewModel @Inject constructor(private val productDetailUseCase: GetProductDetailUseCase) :
+class ProductDetailVewModel(private val productDetailUseCase: GetProductDetailUseCase) :
     ViewModel() {
 
 

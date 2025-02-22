@@ -15,15 +15,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.roshan.sample.presentation.component.listItem
 import com.roshan.sample.presentation.viewmodel.ProductListVewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun ListingScreen() {
-
-    val viewModel: ProductListVewModel = hiltViewModel()
+    val viewModel = koinViewModel<ProductListVewModel>()
     val context = LocalContext.current
     val result = viewModel.productList.value
 
