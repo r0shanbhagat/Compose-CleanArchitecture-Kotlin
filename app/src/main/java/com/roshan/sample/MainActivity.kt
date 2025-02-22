@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.roshan.sample.presentation.screens.listingScreen
+import com.roshan.sample.presentation.screens.ListingScreen
 import com.roshan.sample.ui.theme.ComposePOCTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    listingScreen()
+                    ListingScreen()
                 }
             }
         }
