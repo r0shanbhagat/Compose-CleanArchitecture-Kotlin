@@ -31,11 +31,18 @@ android {
         }
     }
 
-    flavorDimensions += "environment"
+    flavorDimensions.add("environment")
     productFlavors {
-        create("dev")
-        create("staging")
-        create("prod")
+        create("dev") {
+            resValue("string", "app_name", "Compose Clean Architecture")
+            buildConfigField("String", "BASE_URL", "\"https://fakestoreapi.com/\"")
+
+        }
+        create("production") {
+            resValue("string", "app_name", "Compose Clean Architecture")
+            buildConfigField("String", "BASE_URL", "\"https://fakestoreapi.com/\"")
+
+        }
     }
 
     compileOptions {
@@ -61,11 +68,15 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.navigation.compose)
+    implementation(libs.androidx.material.icons.extended)
+
 
     /**
      ******************************* Image Loading *************************************************
      **/
     implementation(libs.coil.compose)
+    implementation(libs.coil.svg)
 
     /**
      ******************************* ViewModel and LiveData ****************************************
@@ -88,11 +99,13 @@ dependencies {
     implementation(libs.ktor.content.negotiation)
     implementation(libs.ktor.kotlinx.json)
     implementation(libs.ktor.logging)
+    implementation(libs.ktor.okhttp)
 
     /**
      ******************************* Unit Testing ************************************
      **/
+    debugImplementation(libs.androidx.ui.tooling)
     androidTestImplementation(libs.androidx.junit)
-
+    testImplementation(libs.koin.test)
 
 }

@@ -42,7 +42,7 @@ fun listItem(category: ProductItem, onItemClick: (ProductItem) -> Unit) {
                 painter = rememberAsyncImagePainter(category.image),
                 contentDescription = ""
             )
-            userDescription(category, Modifier.weight(0.6f))
+            UserDescription(category, Modifier.weight(0.6f))
         }
         Spacer(modifier = Modifier
             .fillMaxWidth()
@@ -51,7 +51,7 @@ fun listItem(category: ProductItem, onItemClick: (ProductItem) -> Unit) {
 }
 
 @Composable
-fun userDescription(category: ProductItem, modifier: Modifier) {
+fun UserDescription(category: ProductItem, modifier: Modifier) {
     Column(modifier = modifier) {
         Text(category.title, fontSize = 14.sp, fontWeight = FontWeight.Bold)
         Spacer(Modifier.height(10.dp))

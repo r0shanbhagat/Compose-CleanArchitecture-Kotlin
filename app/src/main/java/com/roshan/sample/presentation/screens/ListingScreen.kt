@@ -1,6 +1,5 @@
 package com.roshan.sample.presentation.screens
 
-import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,15 +12,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.roshan.sample.presentation.component.listItem
 import com.roshan.sample.presentation.viewmodel.ProductListVewModel
 import org.koin.androidx.compose.koinViewModel
 
-@Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun ListingScreen() {
+fun ListingScreen(detailScreen: (String) -> Unit) {
     val viewModel = koinViewModel<ProductListVewModel>()
     val context = LocalContext.current
     val result = viewModel.productList.value
@@ -41,8 +38,8 @@ fun ListingScreen() {
         Column(modifier = Modifier.fillMaxSize()) {
             LazyColumn {
                 items(it) { item ->
-                    listItem(item) { product ->
-                        Toast.makeText(context, product.title, Toast.LENGTH_SHORT).show()
+                    listItem(item) {
+                        detailScreen.invoke(item.id.toString())
                     }
                 }
             }
