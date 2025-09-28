@@ -17,6 +17,8 @@ junit = "1.2.1"
 coilCompose = "2.4.0"
 activity-compose = "1.10.0"
 ktor = "3.1.0"
+googleGmsGoogleServices = "4.4.3"
+firebaseMessaging = "34.3.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -50,11 +52,14 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 koin-test = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koin" }
 navigation-compose = { module = "androidx.navigation:navigation-compose", version = "2.7.0" }
 
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseMessaging" }
+firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp-google = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-
-
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }

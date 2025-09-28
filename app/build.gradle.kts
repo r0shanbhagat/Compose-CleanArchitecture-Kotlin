@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.ksp.google)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -89,6 +90,14 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
     //implementation(libs.koin.viewmodel)
+
+    /**
+     ******************************* Firebase **************************************************
+     **/
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.messaging)
+    implementation(libs.firebase.analytics)
+
 
     /**
      ******************************* Network-KTOR **************************************************
