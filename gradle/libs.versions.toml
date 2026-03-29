@@ -1,24 +1,25 @@
 #https://callmeryan.medium.com/gradle-version-catalog-728111fa210f
 [versions]
-material = "1.7.8"
-minSdk = "26"
-navigationCompose = "2.8.7"
+material = "1.10.1"
+minSdk = "27"
+navigationCompose = "2.9.6"
 targetSdk = "35"
-compileSdk = "35"
+compileSdk = "36"
 
-agp = "8.10.1"
-kotlin = "2.1.10"
-coreKtx = "1.15.0"
-ksp = "2.1.10-1.0.30"
-koin = "4.0.2"
-lifecycleViewmodelKtx = "2.8.7"
-composeBom = "2025.02.00"
-junit = "1.2.1"
-coilCompose = "2.4.0"
-activity-compose = "1.10.0"
-ktor = "3.1.0"
-googleGmsGoogleServices = "4.4.3"
-firebaseMessaging = "34.3.0"
+agp = "8.13.2"
+kotlin = "2.3.0"
+coreKtx = "1.17.0"
+ksp = "2.2.20-2.0.3"
+koin = "4.1.1"
+lifecycleViewmodelKtx = "2.10.0"
+composeBom = "2026.01.00"
+junit = "1.3.0"
+coilCompose = "2.7.0"
+activity-compose = "1.12.2"
+ktor = "3.3.3"
+googleGmsGoogleServices = "4.4.4"
+firebaseBOM = "34.8.0"
+kotlinx-datetime = "0.7.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -50,11 +51,12 @@ ktor-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "k
 
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit" }
 koin-test = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koin" }
-navigation-compose = { module = "androidx.navigation:navigation-compose", version = "2.7.0" }
+navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 
-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseMessaging" }
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBOM" }
 firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -50,9 +50,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_19
         targetCompatibility = JavaVersion.VERSION_19
     }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_19.toString()
-    }
     buildFeatures {
         compose = true
     }
@@ -62,6 +59,7 @@ dependencies {
     /**
      ******************************* Android Common Component***************************************
      **/
+    //implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.aar"))))
     implementation(libs.androidx.core.ktx)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
@@ -117,5 +115,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     androidTestImplementation(libs.androidx.junit)
     testImplementation(libs.koin.test)
+    implementation(libs.kotlinx.datetime)
 
+    implementation(files("libs/fusedLibrary.aar"))
+
+    //implementation(files("libs/login-debug.aar"))
+    //implementation(mapOf("name" to "login-debug", "ext" to "aar"))
 }
