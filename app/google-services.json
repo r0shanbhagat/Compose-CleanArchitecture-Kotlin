@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "564300039792",
+    "project_id": "android-digital-playground",
+    "storage_bucket": "android-digital-playground.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564300039792:android:3e57e6bbf028263dbad6b5",
+        "android_client_info": {
+          "package_name": "com.codentmind.gemlens"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDmJ63szPfwKlG8JUNvFupX5VftPA35Cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564300039792:android:8b7977a2f104ed43bad6b5",
+        "android_client_info": {
+          "package_name": "com.digital.playground"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDmJ63szPfwKlG8JUNvFupX5VftPA35Cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564300039792:android:e03e02c0d4234ae2bad6b5",
+        "android_client_info": {
+          "package_name": "com.roshan.sample"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDmJ63szPfwKlG8JUNvFupX5VftPA35Cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

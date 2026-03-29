@@ -1,5 +1,6 @@
 package com.roshan.sample.presentation.viewmodel
 
+import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
@@ -7,8 +8,10 @@ import com.roshan.sample.core.BaseViewModel
 import com.roshan.sample.core.UiState
 import com.roshan.sample.domain.usecase.GetProductListUseCase
 import com.roshan.sample.presentation.state.ProductListState
+import com.roshan.sample.utils.getAccessToken
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 
 
 class ProductListVewModel(productListUseCase: GetProductListUseCase) : BaseViewModel() {
@@ -32,6 +35,13 @@ class ProductListVewModel(productListUseCase: GetProductListUseCase) : BaseViewM
                 }
             }
         }.launchIn(viewModelScope)
+    }
+
+    fun fetchToken() {
+        viewModelScope.launch {
+            val token = getAccessToken()
+            Log.v("Access Token:", token)
+        }
     }
 
 }
